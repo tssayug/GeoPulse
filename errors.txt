@@ -1,0 +1,9 @@
+﻿src/context/LayoutContext.tsx(1,17): error TS6133: 'useState' is declared but its value is never read.
+src/context/LayoutContext.tsx(1,27): error TS6133: 'useEffect' is declared but its value is never read.
+src/context/LayoutContext.tsx(6,7): error TS6133: 'LayoutContext' is declared but its value is never read.
+src/views/DashboardView.tsx(1,27): error TS6133: 'useEffect' is declared but its value is never read.
+src/views/DashboardView.tsx(22,42): error TS2503: Cannot find namespace 'GridLayout'.
+src/views/DashboardView.tsx(27,40): error TS2503: Cannot find namespace 'GridLayout'.
+src/views/DashboardView.tsx(84,17): error TS2322: Type '(newLayout: GridLayout.Layout[]) => void' is not assignable to type '(layout: Layout) => void'.
+  Types of parameters 'newLayout' and 'layout' are incompatible.
+    The type 'Layout' is 'readonly' and cannot be assigned to the mutable type 'GridLayout.Layout[]'.
