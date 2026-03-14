@@ -15,7 +15,7 @@ const WidgetWrapper: React.FC<WidgetWrapperProps> = ({ id, title, onRemove, chil
             <div className="drag-handle h-10 bg-dark-bg border-b border-dark-border flex items-center justify-between px-3 cursor-move cursor-grab active:cursor-grabbing select-none hover:bg-opacity-80 transition-colors">
                 <div className="flex items-center gap-2">
                     <GripHorizontal size={14} className="text-gray-500 group-hover:text-dark-accent transition-colors" />
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-gray-300">{title}</h3>
+                    <h3 className="text-sm font-bold uppercase tracking-wider text-gray-300">{title}</h3>
                 </div>
                 <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                     <button className="p-1 hover:bg-dark-panel rounded text-gray-400 hover:text-gray-200 transition-colors cursor-pointer z-10" aria-label="Maximize">

@@ -51,8 +51,8 @@ const EmergencyAlertsWidget: React.FC = () => {
     return (
         <div className="flex flex-col h-full gap-3 font-mono">
             <div className="flex justify-between items-center px-1">
-                <span className="text-[10px] text-gray-400 uppercase tracking-widest">Aggregated Alert Stream</span>
-                <span className="flex items-center gap-1 text-[10px] text-dark-accent font-bold">
+                <span className="text-sm text-gray-400 uppercase tracking-widest">Aggregated Alert Stream</span>
+                <span className="flex items-center gap-1 text-sm text-dark-accent font-bold">
                     <Zap size={10} className="animate-bounce" /> LIVE
                 </span>
             </div>
@@ -65,14 +65,14 @@ const EmergencyAlertsWidget: React.FC = () => {
                                 {alert.type === 'CRITICAL' ? <ShieldAlert size={14} /> : 
                                  alert.type === 'WARNING' ? <AlertTriangle size={14} /> : 
                                  <AlertCircle size={14} />}
-                                <span className="text-[9px] font-bold tracking-tighter uppercase">{alert.source}</span>
+                                <span className="text-xs font-bold tracking-tighter uppercase">{alert.source}</span>
                             </div>
-                            <span className="text-[9px] opacity-70">{alert.time}</span>
+                            <span className="text-xs opacity-70">{alert.time}</span>
                         </div>
                         
                         <div className="flex flex-col">
                             <span className="text-[11px] font-black uppercase leading-tight">{alert.title}</span>
-                            <span className="text-[10px] opacity-80 mt-1">{alert.location}</span>
+                            <span className="text-sm opacity-80 mt-1">{alert.location}</span>
                         </div>
 
                         {/* Scanline pulse */}
@@ -84,7 +84,7 @@ const EmergencyAlertsWidget: React.FC = () => {
             </div>
 
             <div className="pt-2 border-t border-dark-border/30 text-center">
-                <button className="text-[9px] text-gray-500 hover:text-dark-accent transition-colors uppercase tracking-widest">
+                <button className="text-xs text-gray-500 hover:text-dark-accent transition-colors uppercase tracking-widest">
                     Clear Terminal
                 </button>
             </div>

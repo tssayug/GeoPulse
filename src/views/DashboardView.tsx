@@ -57,7 +57,7 @@ const DashboardView: React.FC = () => {
             case 'earthquake': return <EarthquakeMonitorWidget />;
             case 'conflict': return <ConflictMapWidget />;
             case 'aisummary': return <AINewsSummaryWidget />;
-            default: return <div className="text-gray-500 font-mono text-xs p-4">Unknown Widget: {id}</div>;
+            default: return <div className="text-gray-500 font-mono text-sm p-4">Unknown Widget: {id}</div>;
         }
     };
 
@@ -86,7 +86,7 @@ const DashboardView: React.FC = () => {
                             setLayout(defaultLayout);
                             localStorage.setItem('dashboard-layout', JSON.stringify(defaultLayout));
                         }}
-                        className="text-xs uppercase tracking-widest text-dark-accent hover:text-green-400 font-bold px-3 py-1.5 border border-dark-border rounded cursor-pointer transition-colors"
+                        className="text-sm uppercase tracking-widest text-dark-accent hover:text-green-400 font-bold px-3 py-1.5 border border-dark-border rounded cursor-pointer transition-colors"
                     >
                         Reset Layout
                     </button>

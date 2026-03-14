@@ -97,12 +97,12 @@ const MarketsWidget: React.FC = () => {
     return (
         <div className="flex flex-col gap-3 h-full">
             <div className="flex justify-between items-center px-1">
-                <span className="text-[10px] text-gray-500 font-mono">
+                <span className="text-sm text-gray-500 font-mono">
                     {loading ? 'SYNCING...' : `LAST UPDATE: ${lastUpdated.toLocaleTimeString()}`}
                 </span>
                 <button 
                     onClick={() => fetchMarketData()}
-                    className="text-[10px] text-dark-accent hover:text-green-400 font-bold uppercase transition-colors"
+                    className="text-sm text-dark-accent hover:text-green-400 font-bold uppercase transition-colors"
                     disabled={loading}
                 >
                     <RefreshCw size={10} className={loading ? 'animate-spin' : ''} />
@@ -113,12 +113,12 @@ const MarketsWidget: React.FC = () => {
                 {markets.map((market) => (
                     <div key={market.id} className="flex items-center justify-between p-3 bg-dark-bg/30 border border-dark-border/50 rounded hover:bg-dark-bg/50 hover:border-gray-500 transition-all group">
                         <div className="flex flex-col">
-                            <div className="font-bold text-gray-300 tracking-wide text-xs">{market.label}</div>
-                            <div className="text-[10px] text-gray-500 font-mono uppercase">{market.symbol}</div>
+                            <div className="font-bold text-gray-300 tracking-wide text-sm">{market.label}</div>
+                            <div className="text-sm text-gray-500 font-mono uppercase">{market.symbol}</div>
                         </div>
                         <div className="flex items-center gap-4">
-                            <span className="font-mono text-sm text-gray-200">{market.value}</span>
-                            <div className={`flex items-center gap-1 w-20 justify-end font-mono text-xs ${market.isUp ? 'text-dark-accent' : 'text-dark-alert'}`}>
+                            <span className="font-mono text-base text-gray-200">{market.value}</span>
+                            <div className={`flex items-center gap-1 w-20 justify-end font-mono text-sm ${market.isUp ? 'text-dark-accent' : 'text-dark-alert'}`}>
                                 {market.isUp ? <TrendingUp size={14} /> : <TrendingDown size={14} />}
                                 <span>{market.percent}</span>
                             </div>

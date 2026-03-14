@@ -60,6 +60,7 @@
   background-position: bottom right;
   padding: 0 3px 3px 0;
   cursor: se-resize;
+  z-index: 50;
 }
 .react-resizable-handle-se {
   bottom: 0;

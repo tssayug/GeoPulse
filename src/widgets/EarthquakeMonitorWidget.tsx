@@ -51,10 +51,10 @@ const EarthquakeMonitorWidget: React.FC = () => {
     return (
         <div className="flex flex-col h-full gap-3">
             <div className="flex justify-between items-center px-1">
-                <span className="text-[10px] text-gray-500 font-mono uppercase">
+                <span className="text-sm text-gray-500 font-mono uppercase">
                     {loading ? 'SENSING SEISMIC ACTIVITY...' : `LAST SCAN: ${lastUpdated.toLocaleTimeString()}`}
                 </span>
-                <span className="text-[10px] text-dark-accent font-bold font-mono">
+                <span className="text-sm text-dark-accent font-bold font-mono">
                     USGS LIVE FEED
                 </span>
             </div>
@@ -69,19 +69,19 @@ const EarthquakeMonitorWidget: React.FC = () => {
                         <div className={`w-12 h-12 rounded-full flex flex-col items-center justify-center border font-bold ${
                             quake.magnitude >= 5 ? 'border-dark-alert text-dark-alert' : 'border-dark-accent text-dark-accent'
                         }`}>
-                            <span className="text-xs">MAG</span>
-                            <span className="text-sm leading-none">{quake.magnitude.toFixed(1)}</span>
+                            <span className="text-sm">MAG</span>
+                            <span className="text-base leading-none">{quake.magnitude.toFixed(1)}</span>
                         </div>
                         
                         <div className="flex-1 flex flex-col min-w-0">
-                            <div className="text-xs text-gray-200 font-bold truncate group-hover:text-white transition-colors">
+                            <div className="text-sm text-gray-200 font-bold truncate group-hover:text-white transition-colors">
                                 {quake.location}
                             </div>
                             <div className="flex items-center gap-3 mt-1">
-                                <span className="flex items-center gap-1 text-[10px] text-gray-500 font-mono">
+                                <span className="flex items-center gap-1 text-sm text-gray-500 font-mono">
                                     <Layers size={10} /> {quake.depth.toFixed(1)}km DEPTH
                                 </span>
-                                <span className="text-[10px] text-gray-500 font-mono">
+                                <span className="text-sm text-gray-500 font-mono">
                                     {quake.time}
                                 </span>
                             </div>

@@ -68,12 +68,12 @@ const NewsWidget: React.FC = () => {
     return (
         <div className="flex flex-col gap-3 h-full">
             <div className="flex justify-between items-center px-1">
-                <span className="text-[10px] text-gray-500 font-mono">
+                <span className="text-sm text-gray-500 font-mono">
                     {loading ? 'SYNCHRONIZING...' : `LAST UPDATE: ${lastUpdated.toLocaleTimeString()}`}
                 </span>
                 <button 
                     onClick={() => fetchNews()}
-                    className="text-[10px] text-dark-accent hover:text-green-400 font-bold uppercase transition-colors"
+                    className="text-sm text-dark-accent hover:text-green-400 font-bold uppercase transition-colors"
                 >
                     Refresh
                 </button>
@@ -82,12 +82,12 @@ const NewsWidget: React.FC = () => {
             <div className="flex-1 overflow-y-auto pr-1 space-y-3 custom-scrollbar">
                 {news.map((item) => (
                     <div key={item.id} className="flex flex-col gap-1 p-3 bg-dark-bg/50 border border-dark-border rounded-md hover:border-gray-500 transition-all cursor-default group">
-                        <div className="flex justify-between items-center text-[10px] text-gray-500 font-bold tracking-wider">
+                        <div className="flex justify-between items-center text-sm text-gray-500 font-bold tracking-wider">
                             <span className="text-blue-400 group-hover:text-blue-300">{item.source}</span>
                             <span>{item.time}</span>
                         </div>
-                        <h4 className="text-sm text-gray-200 font-bold leading-tight group-hover:text-white transition-colors">{item.title}</h4>
-                        <p className="text-xs text-gray-400 leading-snug line-clamp-2">{item.description}</p>
+                        <h4 className="text-base text-gray-200 font-bold leading-tight group-hover:text-white transition-colors">{item.title}</h4>
+                        <p className="text-sm text-gray-400 leading-snug line-clamp-2">{item.description}</p>
                     </div>
                 ))}
             </div>

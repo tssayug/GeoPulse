@@ -78,13 +78,13 @@ const ConflictMapWidget: React.FC = () => {
         }
     };
 
-    if (!mounted) return <div className="h-full w-full bg-dark-bg flex items-center justify-center text-gray-500 font-mono text-xs">LOADING TACTICAL GRID...</div>;
+    if (!mounted) return <div className="h-full w-full bg-dark-bg flex items-center justify-center text-gray-500 font-mono text-sm">LOADING TACTICAL GRID...</div>;
 
     return (
         <div className="flex flex-col h-full gap-2 font-mono">
             <div className="flex justify-between items-center px-1">
-                <span className="text-[10px] text-gray-500 uppercase">Geopolitical Flashpoints</span>
-                <span className="text-[10px] text-dark-alert font-bold animate-pulse">LIVE INTEL FEED</span>
+                <span className="text-sm text-gray-500 uppercase">Geopolitical Flashpoints</span>
+                <span className="text-sm text-dark-alert font-bold animate-pulse">LIVE INTEL FEED</span>
             </div>
 
             <div className="h-48 w-full rounded border border-dark-border overflow-hidden relative z-0">
@@ -119,7 +119,7 @@ const ConflictMapWidget: React.FC = () => {
                                 })}
                             >
                                 <Popup className="dark-popup">
-                                    <div className="text-[10px] font-mono p-1 bg-dark-panel">
+                                    <div className="text-sm font-mono p-1 bg-dark-panel">
                                         <div className="font-bold border-b border-dark-border mb-1">{zone.name}</div>
                                         <div>STATUS: {zone.status}</div>
                                         <div className="text-gray-400 mt-1">{zone.activity}</div>
@@ -137,9 +137,9 @@ const ConflictMapWidget: React.FC = () => {
                     <div key={zone.id} className="p-2 border border-dark-border/30 bg-dark-bg/20 rounded hover:border-gray-500 transition-colors flex flex-col gap-1">
                         <div className="flex justify-between items-center">
                             <span className="text-[11px] text-gray-200 font-bold">{zone.name}</span>
-                            <span className={`text-[9px] font-bold ${getStatusColor(zone.status)}`}>{zone.status}</span>
+                            <span className={`text-xs font-bold ${getStatusColor(zone.status)}`}>{zone.status}</span>
                         </div>
-                        <p className="text-[10px] text-gray-500 leading-tight italic">"{zone.activity}"</p>
+                        <p className="text-sm text-gray-500 leading-tight italic">"{zone.activity}"</p>
                     </div>
                 ))}
             </div>

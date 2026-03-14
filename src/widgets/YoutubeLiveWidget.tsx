@@ -8,11 +8,13 @@ interface NewsChannel {
 }
 
 const channels: NewsChannel[] = [
-    { id: 'reuters', name: 'REUTERS', channelId: 'UChqUMBaofJD3lJ4J8_GvS3A' },
-    { id: 'aljazeera', name: 'AL JAZEERA', channelId: 'UCNye-wNBqNL5ZzHSJj3l8Bg' },
-    { id: 'dw', name: 'DW NEWS', channelId: 'UCknLrEdhrcEHF7li75nKAtA' },
-    { id: 'france24', name: 'FRANCE 24', channelId: 'UC8nEIs6YV6N1m_h5Gj5Jp7Q' },
-    { id: 'skynews', name: 'SKY NEWS', channelId: 'UCoMdktPbSTqxWtr97bcL7hQ' },
+    { id: 'dw', name: 'DW NEWS', channelId: 'UCknLrEdhRCp1aegoMqRaCZg' },
+    { id: 'skynews', name: 'SKY NEWS', channelId: 'UCoMdktPbSTixAyNGwb-UYkQ' },
+    { id: 'bbc', name: 'BBC NEWS', channelId: 'UC16niRr50-MSBwiO3YDb3RA' },
+    { id: 'france24', name: 'FRANCE 24 ENGLISH', channelId: 'UCQfwfsi5VrQ8yKZ-UWmAEFg' },
+    { id: 'bloomberg', name: 'BLOOMBERG GLOBAL NEWS', channelId: 'UCIALMKvObZNtJ6AmdCLP7Lg' },
+    { id: 'trt', name: 'TRT WORLD', channelId: 'UC7fWeaHhqgM4Ry-RMpM2YYw' },
+    { id: 'cna', name: 'CHANNEL NEWS ASIA', channelId: 'UC83jt4dlz1Gjl58fzQrrKZg' },
 ];
 
 const YoutubeLiveWidget: React.FC = () => {
@@ -31,7 +33,7 @@ const YoutubeLiveWidget: React.FC = () => {
                 <div className="absolute top-2 right-2 z-30 opacity-0 group-hover:opacity-100 transition-opacity">
                     <button 
                         onClick={() => setShowSelector(true)}
-                        className="bg-dark-bg/80 border border-dark-border text-[10px] text-dark-accent px-2 py-1 rounded hover:bg-dark-accent hover:text-dark-bg transition-colors flex items-center gap-1"
+                        className="bg-dark-bg/80 border border-dark-border text-sm text-dark-accent px-2 py-1 rounded hover:bg-dark-accent hover:text-dark-bg transition-colors flex items-center gap-1"
                     >
                         <Monitor size={12} /> CHANGE FEED
                     </button>
@@ -54,14 +56,14 @@ const YoutubeLiveWidget: React.FC = () => {
                 ) : (
                     <div className="h-full w-full flex flex-col items-center justify-center bg-dark-bg/80">
                         <Radio className="text-dark-accent mb-2 animate-pulse" size={32} />
-                        <span className="text-gray-500 text-xs font-bold tracking-widest">SIGNAL LOST - SELECT FEED</span>
+                        <span className="text-gray-500 text-sm font-bold tracking-widest">SIGNAL LOST - SELECT FEED</span>
                     </div>
                 )}
 
                 {/* Feed Selector Overlay */}
                 {showSelector && (
                     <div className="absolute inset-0 bg-dark-bg/95 z-40 p-4 flex flex-col gap-4 overflow-y-auto">
-                        <div className="text-[10px] text-gray-400 border-b border-dark-border pb-1">AVAILABLE SATELLITE FEEDS</div>
+                        <div className="text-sm text-gray-400 border-b border-dark-border pb-1">AVAILABLE SATELLITE FEEDS</div>
                         <div className="flex flex-col gap-2">
                             {channels.map(channel => (
                                 <button
@@ -75,7 +77,7 @@ const YoutubeLiveWidget: React.FC = () => {
                                 >
                                     <div className="flex items-center gap-3">
                                         <div className={`w-2 h-2 rounded-full ${selectedChannel?.id === channel.id ? 'bg-dark-accent animate-pulse' : 'bg-gray-600'}`}></div>
-                                        <span className="text-xs font-bold">{channel.name}</span>
+                                        <span className="text-sm font-bold">{channel.name}</span>
                                     </div>
                                     <ChevronRight size={14} />
                                 </button>
@@ -90,12 +92,12 @@ const YoutubeLiveWidget: React.FC = () => {
             
             {/* Status Bar */}
             <div className="bg-black/80 border-t border-dark-border/50 px-2 py-1 flex justify-between items-center z-30">
-                <span className="text-[9px] text-gray-500 uppercase tracking-tighter">
+                <span className="text-xs text-gray-500 uppercase tracking-tighter">
                     {selectedChannel ? `STREAMING: ${selectedChannel.name}` : 'OPERATIONAL STANDBY'}
                 </span>
                 <div className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-dark-accent rounded-full animate-pulse"></span>
-                    <span className="text-[9px] text-dark-accent font-bold">LIVE</span>
+                    <span className="text-xs text-dark-accent font-bold">LIVE</span>
                 </div>
             </div>
         </div>

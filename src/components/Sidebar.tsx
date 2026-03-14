@@ -7,7 +7,7 @@ const Sidebar: React.FC = () => {
         <aside className="w-64 bg-dark-bg border-r border-dark-border h-full flex flex-col items-center py-6">
             <div className="flex items-center gap-2 mb-10 text-dark-accent px-4">
                 <Activity size={28} />
-                <h1 className="text-xl font-bold tracking-widest text-gray-200 uppercase">Nemesis</h1>
+                <h1 className="text-xl font-bold tracking-widest text-gray-200 uppercase">GeoPulse</h1>
             </div>
             <nav className="w-full flex-1 flex flex-col gap-2 px-4">
                 <NavLink

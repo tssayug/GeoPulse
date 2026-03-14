@@ -98,15 +98,15 @@ const DisasterEventsWidget: React.FC = () => {
         }
     }, [fetchEvents, mounted]);
 
-    if (!mounted) return <div className="h-full w-full bg-dark-bg flex items-center justify-center text-gray-500 font-mono text-xs">LOADING DISASTER DATA...</div>;
+    if (!mounted) return <div className="h-full w-full bg-dark-bg flex items-center justify-center text-gray-500 font-mono text-sm">LOADING DISASTER DATA...</div>;
 
     return (
         <div className="flex flex-col h-full gap-2 font-mono">
             <div className="flex justify-between items-center px-1">
-                <span className="text-[10px] text-gray-500 uppercase">
+                <span className="text-sm text-gray-500 uppercase">
                     {loading ? 'REFRESHING...' : 'GLOBAL DISASTER MONITOR'}
                 </span>
-                <span className="text-[10px] text-dark-accent font-bold">
+                <span className="text-sm text-dark-accent font-bold">
                     {events.length} EVENTS ACTIVE
                 </span>
             </div>
@@ -123,7 +123,7 @@ const DisasterEventsWidget: React.FC = () => {
                     {events.map(event => (
                         <Marker key={event.id} position={[event.latitude, event.longitude]} icon={DefaultIcon}>
                             <Popup className="dark-popup">
-                                <div className="text-[10px] p-1 bg-dark-panel">
+                                <div className="text-sm p-1 bg-dark-panel">
                                     <div className="text-dark-alert font-bold">{event.category}</div>
                                     <div className="text-gray-300">{event.title}</div>
                                 </div>
@@ -141,9 +141,9 @@ const DisasterEventsWidget: React.FC = () => {
                             <AlertTriangle size={14} className="text-dark-alert" />
                         </div>
                         <div className="flex flex-col">
-                            <div className="text-[10px] text-dark-accent font-bold uppercase tracking-tighter">{event.category}</div>
-                            <div className="text-xs text-gray-200 font-bold leading-tight line-clamp-1">{event.title}</div>
-                            <div className="text-[10px] text-gray-500">{event.date}</div>
+                            <div className="text-sm text-dark-accent font-bold uppercase tracking-tighter">{event.category}</div>
+                            <div className="text-sm text-gray-200 font-bold leading-tight line-clamp-1">{event.title}</div>
+                            <div className="text-sm text-gray-500">{event.date}</div>
                         </div>
                     </div>
                 ))}

@@ -15,9 +15,9 @@ const HomeView: React.FC = () => {
                 {/* Title */}
                 <div className="flex flex-col gap-4 items-center">
                     <h1 className="text-4xl md:text-5xl font-bold tracking-[0.2em] text-gray-200 uppercase drop-shadow-lg">
-                        National Emergency
+                        GeoPulse
                         <br />
-                        <span className="text-dark-accent">Monitoring System</span>
+                        <span className="text-dark-accent tracking-widest text-2xl md:text-3xl">— Real-Time Global Awareness</span>
                     </h1>
                     <div className="h-1 w-32 bg-dark-accent rounded-full shadow-[0_0_15px_rgba(34,197,94,0.5)]"></div>
                 </div>

@@ -42,19 +42,19 @@ const MapLayerSwitcher: React.FC<{ currentLayer: string, setLayer: (l: string) =
         <div className="absolute top-2 left-2 z-[400] flex flex-col gap-1 bg-dark-bg/80 border border-dark-border p-1 rounded shadow backdrop-blur-sm">
             <button 
                 onClick={() => setLayer('dark')}
-                className={`px-2 py-1 text-[8px] font-mono uppercase rounded transition-colors ${currentLayer === 'dark' ? 'bg-dark-accent text-dark-bg font-bold' : 'text-gray-400 hover:text-white'}`}
+                className={`px-2 py-1 text-xs font-mono uppercase rounded transition-colors ${currentLayer === 'dark' ? 'bg-dark-accent text-dark-bg font-bold' : 'text-gray-400 hover:text-white'}`}
             >
                 Tactical
             </button>
             <button 
                 onClick={() => setLayer('satellite')}
-                className={`px-2 py-1 text-[8px] font-mono uppercase rounded transition-colors ${currentLayer === 'satellite' ? 'bg-dark-accent text-dark-bg font-bold' : 'text-gray-400 hover:text-white'}`}
+                className={`px-2 py-1 text-xs font-mono uppercase rounded transition-colors ${currentLayer === 'satellite' ? 'bg-dark-accent text-dark-bg font-bold' : 'text-gray-400 hover:text-white'}`}
             >
                 Satellite
             </button>
             <button 
                 onClick={() => setLayer('osm')}
-                className={`px-2 py-1 text-[8px] font-mono uppercase rounded transition-colors ${currentLayer === 'osm' ? 'bg-dark-accent text-dark-bg font-bold' : 'text-gray-400 hover:text-white'}`}
+                className={`px-2 py-1 text-xs font-mono uppercase rounded transition-colors ${currentLayer === 'osm' ? 'bg-dark-accent text-dark-bg font-bold' : 'text-gray-400 hover:text-white'}`}
             >
                 Street
             </button>
@@ -117,7 +117,7 @@ const FlightTrackerWidget: React.FC = () => {
         }
     }, [fetchFlights, mounted]);
 
-    if (!mounted) return <div className="h-full w-full bg-dark-bg flex items-center justify-center text-gray-500 font-mono text-sm">INITIALIZING RADAR...</div>;
+    if (!mounted) return <div className="h-full w-full bg-dark-bg flex items-center justify-center text-gray-500 font-mono text-base">INITIALIZING RADAR...</div>;
 
     const layers: Record<string, string> = {
         dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
@@ -146,7 +146,7 @@ const FlightTrackerWidget: React.FC = () => {
                         icon={DefaultIcon}
                     >
                         <Popup className="dark-popup">
-                            <div className="p-1 font-mono text-[10px]">
+                            <div className="p-1 font-mono text-sm">
                                 <div className="text-dark-accent font-bold border-b border-dark-border mb-1">{flight.callsign}</div>
                                 <div>ORIGIN: {flight.origin}</div>
                                 <div>ALT: {Math.round(flight.altitude)}m</div>
@@ -163,11 +163,11 @@ const FlightTrackerWidget: React.FC = () => {
 
             {/* Radar Overlay Info */}
             <div className="absolute top-2 right-2 z-[400] flex flex-col gap-1 items-end">
-                <div className="bg-dark-bg/80 border border-dark-border px-2 py-1 rounded text-[10px] text-gray-400 font-mono shadow backdrop-blur-sm">
+                <div className="bg-dark-bg/80 border border-dark-border px-2 py-1 rounded text-sm text-gray-400 font-mono shadow backdrop-blur-sm">
                     {loading ? 'RESCANNING...' : `OPERATIONAL: ${flights.length} CONTACTS`}
                 </div>
                 {error && (
-                    <div className="bg-dark-alert/20 border border-dark-alert/50 text-dark-alert px-2 py-0.5 rounded text-[8px] font-mono">
+                    <div className="bg-dark-alert/20 border border-dark-alert/50 text-dark-alert px-2 py-0.5 rounded text-xs font-mono">
                         {error}
                     </div>
                 )}
